@@ -2,12 +2,17 @@
 
 import re
 
-
-
-line=['1:abc','2:bcd']
+line=['1:abc','32:bcd','1456:xyz']
 
 for i in range(0,len(line)):
-    if re.search(r'\D',line[i]):
-        print('---',line[i][2:])    #--- abc
-                                    #--- bcd
-
+      l=re.sub(r'\d',"",line[i])
+      l=re.sub(r':',"",l)
+      print(l)
+ 
+#output
+'''
+abc
+bcd
+ABC
+cde
+'''
